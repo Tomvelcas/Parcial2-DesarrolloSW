@@ -1,14 +1,24 @@
-<div class="pokemon-list">
-  <ul>
-    <li *ngFor="let pokemon of pokemonList">
-      <h3>{{ pokemon.name }}</h3>
-      <img [src]="pokemon.imageUrl" [alt]="pokemon.name" />
-      <p><strong>Type:</strong> {{ pokemon.type }}</p>
-      <p><strong>Level:</strong> {{ pokemon.level }}</p>
-      <p><strong>abilities:</strong></p>
-      <ol>
-        <li *ngFor="let ability of pokemon.abilities">{{ ability }}</li>
-      </ol>
-    </li>
-  </ul>
+<div class="row">
+  <div
+    class="col-md-3 mb-4"
+    *ngFor="let pokemon of pokemonList"
+  >
+    <div class="card text-center shadow">
+      <img
+        [src]="pokemon.imageUrl"
+        [alt]="pokemon.name"
+        class="card-img-top"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ pokemon.name }}</h5>
+        <p class="card-text"><strong>Tipo:</strong> {{ pokemon.type }}</p>
+        <p class="card-text"><strong>Nivel:</strong> {{ pokemon.level }}</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let ability of pokemon.abilities">
+            {{ ability }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
